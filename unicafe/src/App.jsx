@@ -8,15 +8,20 @@ const Button = ({click, text}) => {
 }
 const Statisics = ({good,neutral,bad}) => {
   let total = good+bad+neutral
+  if (total == 0){
+    return(
+      <p>No feedback has been given</p>
+    )
+  }
   return (
-   
-      <p>good {good}<br/>
+    <p>
+      good {good}<br/>
       neutral {neutral}<br/>
       bad {bad}<br/>
       all {total}<br/>
       average {(good - bad)/(total)}<br/>
-      positive {good/(total)} %</p>
-    
+      positive {good/(total)} %
+    </p>
   )
 }
 const App = () => {
